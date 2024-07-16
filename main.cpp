@@ -47,9 +47,9 @@ int main() {
 	clock_t startTime = clock();
 	while (currentTime <= totalTime) {
 		MOVE_CURSOR(0, 0);
+		double current = 1.0 * currentTime / totalTime * totalFrames;
 		for (int i = 0; i < outputSize.height; ++i) {
 			for (int j = 0; j < outputSize.width; ++j) {
-				double current = 1.0 * currentTime / totalTime * totalFrames;
 				Vec3b currentColor = color[(int)current][i][j];
 				if (currentColor != last) {
 					SET_COLOR(currentColor[2], currentColor[1], currentColor[0]);
